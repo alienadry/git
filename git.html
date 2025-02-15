@@ -23,6 +23,7 @@ phrases:
     .pull request: its a request that lets you or other programmers(on the same project) share there codes for review and merging on the main version of project, its uses for the projects that open source(any programmer can code on it and make a pull request).
     .merge: when a branch, agreed for its pull request, the branch is merged to main branch and become part of main version of project.
     .merge conflict:when 2 or more devs, write at the same line of code, in the merg proccess, git get confused.
+    stash: whenever u want to save your uncommited changes and do otherthings, it means stash
     
    
     
@@ -56,6 +57,9 @@ how to setup git and github?:
     19.git reset --soft commit-hash-code: will get back to that commit, and make the changes in the stage area, so they will be ready for commit or anything.
     20.git reset --hard commit-hash-code: will get back to that commit, and deleting all the commits and changed to gether after that.(even in working directory)
     21.git revert: its opposit of git reset, when you wanna delete the changes but saving the commits.
+    22.git stash: it will save your uncommited changes that you weant to have it but dont want them to be shown.
+    23.git stash list: will show you all your stash codes, that you stash them,it will show a number between {} for each stash.
+    24.git stash apply stash@{number of stash}: will get your stash code back, u can check the number of stash with git stash list.
 
     
     
