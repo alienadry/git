@@ -11,14 +11,18 @@ phrases:
     .repository/repo: folder, can be a local folder on your machine or online repo on github and gitlab,...
     .commit: its a checkpoint, with details about writer, date and time, and a message.
     .untracked file: the folder that give is not tracking, we should tell git to track the files we coded on.
+    .index(staging area): when changes are index, they are ready to commit. or we can say they are staged(or in stage area).
+    .working directory: the files in the directory, they are not staged or sth, they just exist.
     .github: a cloud that allows you to make online repo for your project and collabrate with others.
     .push to github: make github synced and updated with your local repo.
     .pull from github: make your local project merged with github repo updates(that others made like pull req).
     .branch: its a copy of your project that allows you to work on each part of project without effecting the main version.
     .head: means which branch you are now, when you move between branches, the head is changing.
-    .base branch: when u make a branch, its based on the main branch, remeber to write source-branch after that to make it based on the head branch(which is not main branch)
+    .base branch: when u make a branch, its based on the main branch, remeber to write source-branch after that to make it based on the head branch(which is not main branch).
     .origin: default name for your clone from github, remote repo has a link that allows you to make your local connected to github.
     .pull request: its a request that lets you or other programmers(on the same project) share there codes for review and merging on the main version of project, its uses for the projects that open source(any programmer can code on it and make a pull request).
+    .merge: when a branch, agreed for its pull request, the branch is merged to main branch and become part of main version of project.
+    .merge conflict:when 2 or more devs, write at the same line of code, in the merg proccess, git get confused.
     
    
     
@@ -40,12 +44,19 @@ how to setup git and github?:
     7.git branch branch-name: will make you a new branch.
     8.git checkout branch-name: will change the branch.
     9.git checkout -b branch-name: will make a new branch and move to it.
-    10.git branch new-branch source-branch: will make a new branch based on head branch.
-    11.git remote add origin 'link of github repo': will define the online repo with 'origin' name to your local. u can have multiple github repos connected with this command but remember to change the origin name.
-    12.git push -u origin branch-name: will connect your branch to github, for each branch you have to make a connection once.
-    13.git push: will updating the online repo based on your local.
-    14.git pull: will updating your local repo with online repo(for changes that others made)
-    15.
+    10.git checkout commit-hash-code: you can get back to elder commits, i mean geting back to that version, but deletes nothing! its just a history.
+    11.git branch new-branch source-branch: will make a new branch based on head branch.
+    12.git remote add origin 'link of github repo': will define the online repo with 'origin' name to your local. u can have multiple github repos connected with this command but remember to change the origin name.
+    13.git push -u origin branch-name: will connect your branch to github, for each branch you have to make a connection once.
+    14.git push: will updating the online repo based on your local.
+    15.git pull: will updating your local repo with online repo(for changes that others made)
+    16.git clone git-repo-url: will download the project from github ato your local
+    17.git merge main: mostly used for resolving merge conflict, it will bring the main branch (the newest version which is merged with other branch that u conflicted with) and lets you change the codes and making a new pull request.
+    18.git reset commit-hash-code: will get back to that commit and delete the commits after of that, it will keep the changes in working directory(not staged), and just delete the commits after that.
+    19.git reset --soft commit-hash-code: will get back to that commit, and make the changes in the stage area, so they will be ready for commit or anything.
+    20.git reset --hard commit-hash-code: will get back to that commit, and deleting all the commits and changed to gether after that.(even in working directory)
+    21.git revert: its opposit of git reset, when you wanna delete the changes but saving the commits.
+
     
     
     
@@ -58,5 +69,6 @@ pro tips:
         #leting git know the changes: stage => commit. stage means add the folder has been changed and then commit.
         #once a merge happend in pull request, you can delete the old branch(that has allready merged to the main branch)/remember to have a 0 commits ahead and the delete the branch.
         #in the branches part of github, you can see sth has 2 number with 'behind' and 'ahead' titles, behind means the number of commits in branche, and ahead means zero commits left for merging, so if the ahead part is 0, it means its fully merged.
+        #when a merge conflict happened, you can fix it by using git merge main, that gonna bring the main(with the other branch merged) to your branch and lets you compare them and merge them together
 </body>
 </html>
